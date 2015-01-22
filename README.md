@@ -20,10 +20,10 @@ Proposed API:
 var td = require('time-delta');
 
 // Time for three days and four minutes from now:
-td('3').days.and('4').minutes.fromNow();
+new td().days(3).minutes(4).fromNow();
 
-// Time for size weeks, one day, and 68 seconds ago:
-td('6').weeks.and('1').day.and('68').seconds.ago();
+// Time for six weeks, one day, and 68 seconds ago:
+new td().weeks(6).days(one).seconds(68).ago();
 ```
 
 ## License
