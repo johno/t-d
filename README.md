@@ -4,7 +4,8 @@
 
 _Currently under development._
 
-Get a time in the past or future based off the current time.
+Get a time in the past or future based off the current time. Supports function chaining for a clean,
+human-readable time offset.
 
 ## Installation
 
