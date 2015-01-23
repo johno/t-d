@@ -14,9 +14,7 @@
     "type": "git",
     "url": "https://github.com/johnotander/time-delta.git"
   },
-  "keywords": [
-
-  ],
+  "keywords": [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/johnotander/time-delta/issues"

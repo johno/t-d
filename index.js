@@ -1,6 +1,6 @@
 'use strict';
 
-var TimeDelta = function () {
+var TimeDelta = function() {
   this.secondsOffset = 0;
   this.minutesOffset = 0;
   this.hoursOffset = 0;
@@ -45,24 +45,44 @@ TimeDelta.prototype.years = function(years) {
   return this;
 }
 
+TimeDelta.prototype.printDate = function() {
+  var date = new Date(this.currDateTime);
+
+  console.log(
+    (date.getMonth() + 1) + "/" +
+    date.getDate() + "/" +
+    date.getFullYear() + ' ' +
+    date.getMinutes() + ':' +
+    date.getSeconds()
+  );
+}
+
 TimeDelta.prototype.fromNow = function() {
-  console.log('secondsOffset: ' + this.secondsOffset);
-  console.log('minutesOffset: ' + this.minutesOffset);
-  console.log('hoursOffset: ' + this.hoursOffset);
-  console.log('daysOffset: ' + this.daysOffset);
-  console.log('weeksOffset: ' + this.weeksOffset);
-  console.log('monthsOffset: ' + this.monthsOffset);
-  console.log('yearsOffset: ' + this.yearsOffset);
+  this.currDateTime = +new Date();
+  this.printDate();
+
+  this.currDateTime += this.secondsOffset * 1000;
+  this.currDateTime += this.minutesOffset * 60 * 1000;
+  this.currDateTime += this.hoursOffset * 60 * 60 * 1000;
+  this.currDateTime += this.daysOffset * 60 * 60 * 24 * 1000;
+  this.currDateTime += this.weeksOffset * 60 * 60 * 24 * 7 * 1000;
+
+  this.printDate();
+  return new Date(this.currDateTime);
 }
 
 TimeDelta.prototype.ago = function() {
-  console.log('secondsOffset: ' + this.secondsOffset);
-  console.log('minutesOffset: ' + this.minutesOffset);
-  console.log('hoursOffset: ' + this.hoursOffset);
-  console.log('daysOffset: ' + this.daysOffset);
-  console.log('weeksOffset: ' + this.weeksOffset);
-  console.log('monthsOffset: ' + this.monthsOffset);
-  console.log('yearsOffset: ' + this.yearsOffset);
+  this.currDateTime = +new Date();
+  this.printDate();
+
+  this.currDateTime -= this.secondsOffset * 1000;
+  this.currDateTime -= this.minutesOffset * 60 * 1000;
+  this.currDateTime -= this.hoursOffset * 60 * 60 * 1000;
+  this.currDateTime -= this.daysOffset * 60 * 60 * 24 * 1000;
+  this.currDateTime -= this.weeksOffset * 60 * 60 * 24 * 7 * 1000;
+
+  this.printDate();
+  return new Date(this.currDateTime);
 }
 
 module.exports = TimeDelta;
