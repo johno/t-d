@@ -1,16 +1,18 @@
-# time-delta
+# t-d
 
-[![Build Status](https://secure.travis-ci.org/johnotander/time-delta.png?branch=master)](https://travis-ci.org/johnotander/time-delta)
+[![Build Status](https://secure.travis-ci.org/johnotander/t-d.png?branch=master)](https://travis-ci.org/johnotander/t-d)
 
 _Currently under development._
 
 Get a time in the past or future based off the current time. Supports function chaining for a clean,
-human-readable time offset.
+human-readable time offset (time delta).
+
+Currently supports weeks, days, and seconds.
 
 ## Installation
 
 ```bash
-npm install --save time-delta
+npm install --save t-d
 ```
 
 ## Usage
@@ -18,7 +20,7 @@ npm install --save time-delta
 Proposed API:
 
 ```javascript
-var td = require('time-delta');
+var td = require('t-d');
 
 // Time for three days and four minutes from now:
 td().days(3).minutes(4).fromNow();

@@ -1,7 +1,7 @@
 var assert = require('assert');
 var td = require('..');
 
-describe('time-delta', function() {
+describe('t-d', function() {
 
   it('should properly calculate a date fromNow', function() {
     td().seconds(1).days(4).fromNow();
