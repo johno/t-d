@@ -85,4 +85,6 @@ TimeDelta.prototype.ago = function() {
   return new Date(this.currDateTime);
 }
 
-module.exports = TimeDelta;
+module.exports = function() {
+  return new TimeDelta();
+};
