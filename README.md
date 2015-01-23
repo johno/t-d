@@ -23,8 +23,8 @@ var td = require('time-delta');
 // Time for three days and four minutes from now:
 new td().days(3).minutes(4).fromNow();
 
-// Time for six weeks, one day, and 68 seconds ago:
-new td().weeks(6).days(one).seconds(68).ago();
+// Time for six weeks, two days, and 68 seconds ago:
+new td().weeks(6).days(2).seconds(68).ago();
 ```
 
 ## License
