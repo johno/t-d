@@ -59,7 +59,6 @@ TimeDelta.prototype.printDate = function() {
 
 TimeDelta.prototype.fromNow = function() {
   this.currDateTime = +new Date();
-  this.printDate();
 
   this.currDateTime += this.secondsOffset * 1000;
   this.currDateTime += this.minutesOffset * 60 * 1000;
@@ -67,13 +66,11 @@ TimeDelta.prototype.fromNow = function() {
   this.currDateTime += this.daysOffset * 60 * 60 * 24 * 1000;
   this.currDateTime += this.weeksOffset * 60 * 60 * 24 * 7 * 1000;
 
-  this.printDate();
   return new Date(this.currDateTime);
 }
 
 TimeDelta.prototype.ago = function() {
   this.currDateTime = +new Date();
-  this.printDate();
 
   this.currDateTime -= this.secondsOffset * 1000;
   this.currDateTime -= this.minutesOffset * 60 * 1000;
@@ -81,7 +78,6 @@ TimeDelta.prototype.ago = function() {
   this.currDateTime -= this.daysOffset * 60 * 60 * 24 * 1000;
   this.currDateTime -= this.weeksOffset * 60 * 60 * 24 * 7 * 1000;
 
-  this.printDate();
   return new Date(this.currDateTime);
 }
 

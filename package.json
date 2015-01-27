@@ -2,7 +2,7 @@
   "name": "t-d",
   "description": "Get a time in the past or future based off the current time.",
   "author": "John Otander",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "directories": {
     "test": "test"
